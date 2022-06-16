@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         inputElement.addEventListener("input", e => {
             clearInputError(inputElement);
+
+            console.log(21);
         });
     });
 });
