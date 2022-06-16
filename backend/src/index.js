@@ -20,9 +20,8 @@ app.use(helmet());
 app.use(express.static(path.resolve(__dirname + "/../../frontend/")));
 
 app.post("/api/user", async (req, res) => {
-    const { username, email, password } = req.body;
     try {
-        const user = await userController.createUser(username, email, password);
+        const { password, ...user } = await userController.createUser(req.body.username, req.body.email, req.body.password);
         res.json(user);
     } catch (err) {
         res.status(400).json(err);
