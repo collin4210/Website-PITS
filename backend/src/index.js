@@ -17,7 +17,7 @@ app.use(cors({
 }));
 app.use(helmet());
 
-app.use(express.static(path.resolve(__dirname + "/../../frontend/")));
+app.use(express.static(path.resolve(__dirname + "/../../frontend/dist/")));
 
 app.post("/api/user", async (req, res) => {
     try {
